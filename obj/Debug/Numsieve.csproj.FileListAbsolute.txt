@@ -1,0 +1,10 @@
+C:\Users\JoJo\Desktop\numsieve\Numsieve\bin\Debug\Numsieve.exe
+C:\Users\JoJo\Desktop\numsieve\Numsieve\bin\Debug\Numsieve.pdb
+C:\Users\JoJo\Desktop\numsieve\Numsieve\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\JoJo\Desktop\numsieve\Numsieve\bin\Debug\Newtonsoft.Json.xml
+C:\Users\JoJo\Desktop\numsieve\Numsieve\obj\Debug\Numsieve.csprojResolveAssemblyReference.cache
+C:\Users\JoJo\Desktop\numsieve\Numsieve\obj\Debug\Numsieve.Form1.resources
+C:\Users\JoJo\Desktop\numsieve\Numsieve\obj\Debug\Numsieve.Properties.Resources.resources
+C:\Users\JoJo\Desktop\numsieve\Numsieve\obj\Debug\Numsieve.csproj.GenerateResource.Cache
+C:\Users\JoJo\Desktop\numsieve\Numsieve\obj\Debug\Numsieve.exe
+C:\Users\JoJo\Desktop\numsieve\Numsieve\obj\Debug\Numsieve.pdb
