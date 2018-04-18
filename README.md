@@ -12,7 +12,7 @@
 * 添加重复过滤
 * 添加防封代理
 
-
+![pic](http://storage.iceagedata.com/github/PrintScreen.PNG)
 
 
 # License
