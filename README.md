@@ -13,7 +13,12 @@
 * 添加防封代理
 
 ![pic](http://storage.iceagedata.com/github/PrintScreen.PNG)
+# 
+# 
 
-
+# Release
+[Numsieve 1.0.1.1](https://github.com/KirosHan/numsieve/releases)
+# 
+# 
 # License
 MIT license. See [LICENSE](https://github.com/KirosHan/numsieve/blob/master/LICENSE)  for details.
