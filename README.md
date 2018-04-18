@@ -6,19 +6,27 @@
 
 ###### 为避免封IP  采用单线程
 
-### 预期：
+### 近期目标：
 
 * 添加号码分类
 * 添加重复过滤
+* 添加json获取工具
 * 添加防封代理
+
+### 远期目标：
+
+* 完成参数选项，自助配置解析json，形成终极版
+
+ ### 界面
 
 ![pic](http://storage.iceagedata.com/github/PrintScreen.PNG)
 # 
-# 
+
 
 # Release
 [Numsieve 1.0.1.1](https://github.com/KirosHan/numsieve/releases)
 # 
-# 
+
+
 # License
 MIT license. See [LICENSE](https://github.com/KirosHan/numsieve/blob/master/LICENSE)  for details.
