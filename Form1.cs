@@ -12,6 +12,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace Numsieve
 {
@@ -39,7 +40,7 @@ namespace Numsieve
             }
         
         }
-        public delegate void RequestDelegate(RichTextBox richtextBox, int i);
+        public delegate void RequestDelegate();
 
 
         private void Request()  //线程函数  扫号逻辑在这里完成
@@ -75,7 +76,8 @@ namespace Numsieve
                         for (int i = 0; i <= 1188; i += 12)  //每次拉取json都是100个号码，过滤掉无用信息
                         {
                             
-                            addToresultBox(array[i].ToString() + "\r\n");
+                            addToBox(array[i].ToString() + "\r\n",ResultBox);
+                            match(array[i].ToString());
                         }
                         addTostaBox(string.Format("Info: 扫描完成 "+count.ToString()+" 次"));
                         count++;
@@ -98,28 +100,20 @@ namespace Numsieve
             Thread.CurrentThread.Abort();
 
         }
-        public void jsondoing(string _getstr)
-        {
-            try
-            {
-                string jsonText = _getstr;
-                JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
-                JArray array = (JArray)json1["numArray"];
-               
-                for (int i = 0; i <= 1188; i += 12)  //每次拉取json都是100个号码，过滤掉无用信息
-                {
-                        richTextBox2.Text += array[i].ToString() + "\r\n";
 
-                 }
-              
-            }
-            catch
+        public void match(string getstr)
+        {
+            //  string pat = 
+            Regex rg = new Regex(@"([\d])\1{1}"); //包含AA号码
+
+
+            if (rg.IsMatch(getstr))
             {
-              //  MessageBox.Show("Thread is stop !");
+                addToBox(getstr+"\r\n", richTextBox1);
             }
-        
-        
+
         }
+ 
         public string HttpGet(string url)
         {
             try
@@ -157,20 +151,42 @@ namespace Numsieve
 
 
 
-        delegate void addToresultBoxDelegate(string str);
+        delegate void addToBoxDelegate(string str, RichTextBox richtextbox);
 
-        private void addToresultBox(string str)
+        private void addToBox(string str ,RichTextBox richtextbox)
         {
-            if (richTextBox2.InvokeRequired)
+            /*/分类存放
+            if (type == 0)
             {
-                addToresultBoxDelegate d = addToresultBox;
-                richTextBox2.Invoke(d, str);
+                if (richTextBox2.InvokeRequired)
+                {
+                    addToresultBoxDelegate d = addToresultBox;
+                    richTextBox2.Invoke(d, str, type);
+                }
+                else
+                {
+                    richTextBox2.AppendText(str);
+
+                }
+            }
+            else if (type == 1) { }
+            else if (type == 2) { }
+            else if (type == 3) { }
+            else if (type == 4) { }
+            else if (type == 5) { }
+            else if (type == 6) { }
+            */
+            if (richtextbox.InvokeRequired)
+            {
+                addToBoxDelegate d = addToBox;
+                richtextbox.Invoke(d, str, richtextbox);
             }
             else
             {
-                richTextBox2.AppendText(str);
+                richtextbox.AppendText(str);
 
             }
+
 
         }
         delegate void addtostaBoxDelegate(string str);
@@ -194,10 +210,31 @@ namespace Numsieve
 
         private void button3_Click(object sender, EventArgs e)
         {
-            richTextBox2.Text = "";
+            ResultBox.Text = "";
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string GetStr = richTextBox2.Text;
+            try
+            {
+                string jsonText = GetStr;
+                JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
+                JArray array = (JArray)json1["numArray"];
 
+                for (int i = 0; i <= 1188; i += 12)  //每次拉取json都是100个号码，过滤掉无用信息
+                {
 
+                    addToBox(array[i].ToString() + "\r\n", ResultBox);
+                    match(array[i].ToString());
+                }
+                addTostaBox(string.Format("Info: 扫描完成 ... 次"));
+                
+            }
+            catch
+            {
+                addTostaBox(string.Format("Error: 线程错误，重试中..."));
+            }
+        }
     }
 }
