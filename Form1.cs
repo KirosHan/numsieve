@@ -104,13 +104,36 @@ namespace Numsieve
         public void match(string getstr)
         {
             //  string pat = 
-            Regex rg = new Regex(@"([\d])\1{1}"); //包含AA号码
+            Regex AAAAAArg = new Regex(@"([\d])\1{5}"); //包含AAAAAA号码
+            Regex AAAAArg = new Regex(@"([\d])\1{4}"); //包含AAAAA号码
+            Regex endArg = new Regex(@"([\d])\1{2}\b"); //AAA结尾号码
+            Regex AAAArg = new Regex(@"([\d])\1{3}"); //包含AAAA号码
+            Regex AAArg = new Regex(@"([\d])\1{2}"); //包含AAA号码
 
 
-            if (rg.IsMatch(getstr))
+
+            if (AAAAAArg.IsMatch(getstr))  // AAAAAA
             {
-                addToBox(getstr+"\r\n", richTextBox1);
+                addToBox(getstr+"\r\n", AAAAAAbox);
             }
+            else if (AAAAArg.IsMatch(getstr)) //AAAAA
+            {
+                addToBox(getstr + "\r\n", AAAAAbox);
+            }
+            else if (endArg.IsMatch(getstr))  //AAA结尾
+            {
+                addToBox(getstr + "\r\n", endAAAbox);
+            }
+            else if (AAAArg.IsMatch(getstr)) //AAAA
+            {
+                addToBox(getstr + "\r\n", AAAAbox);
+            }
+            else if (AAArg.IsMatch(getstr)) //AAA
+            {
+                addToBox(getstr + "\r\n", AAAbox);
+            }
+
+
 
         }
  

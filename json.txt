@@ -3,16 +3,20 @@ http://num.10010.com/NumApp/NumberCenter/qryNum?callback=jsonp_queryMoreNums&pro
 http://num.10010.com/NumApp/NumberCenter/qryNum?callback=jsonp_queryMoreNums&provinceCode=31&cityCode=310&advancePayLower=0&sortType=1&goodsNet=4&searchCategory=3&qryType=01&numNet=130
 
 
-规则：
-AABB
+规则优先级：
+AAAAAA
+AAAAA
+结尾4/3A
+AAAA
+AAA
 AABBCC
+AABB
 ABAB
 ABCABC
 ABCD
 ABCBA
 ABCCBA
-结尾3A/4A
-AAA
-AAAA
-AAAAA
-AAAAAA
+
+
+
+
