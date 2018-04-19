@@ -39,7 +39,7 @@ namespace Numsieve
             }
         
         }
-        public delegate void RequestDelegate();
+        public delegate void RequestDelegate(RichTextBox richtextBox, int i);
 
 
         private void Request()  //线程函数  扫号逻辑在这里完成
@@ -75,14 +75,14 @@ namespace Numsieve
                         for (int i = 0; i <= 1188; i += 12)  //每次拉取json都是100个号码，过滤掉无用信息
                         {
                             
-                            addToresultBox(array[i].ToString() + "\r\n",0);
+                            addToresultBox(array[i].ToString() + "\r\n");
                         }
                         addTostaBox(string.Format("Info: 扫描完成 "+count.ToString()+" 次"));
                         count++;
                     }
                     catch
                     {
-                        addTostaBox(string.Format("Error: 拉取错误，重试中..."));
+                        addTostaBox(string.Format("Error: 线程错误，重试中..."));
                     }
 
 
@@ -98,13 +98,28 @@ namespace Numsieve
             Thread.CurrentThread.Abort();
 
         }
-
-        public void match(string _getstr)
+        public void jsondoing(string _getstr)
         {
+            try
+            {
+                string jsonText = _getstr;
+                JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
+                JArray array = (JArray)json1["numArray"];
+               
+                for (int i = 0; i <= 1188; i += 12)  //每次拉取json都是100个号码，过滤掉无用信息
+                {
+                        richTextBox2.Text += array[i].ToString() + "\r\n";
 
-
+                 }
+              
+            }
+            catch
+            {
+              //  MessageBox.Show("Thread is stop !");
+            }
+        
+        
         }
-
         public string HttpGet(string url)
         {
             try
@@ -142,22 +157,19 @@ namespace Numsieve
 
 
 
-        delegate void addToresultBoxDelegate(string str, int type);
+        delegate void addToresultBoxDelegate(string str);
 
-        private void addToresultBox(string str ,int type)
+        private void addToresultBox(string str)
         {
-            if (type == 0)
+            if (richTextBox2.InvokeRequired)
             {
-                if (NameBox.InvokeRequired)
-                {
-                    addToresultBoxDelegate d = addToresultBox;
-                    NameBox.Invoke(d, str);
-                }
-                else
-                {
-                    NameBox.AppendText(str);
+                addToresultBoxDelegate d = addToresultBox;
+                richTextBox2.Invoke(d, str);
+            }
+            else
+            {
+                richTextBox2.AppendText(str);
 
-                }
             }
 
         }
@@ -182,7 +194,7 @@ namespace Numsieve
 
         private void button3_Click(object sender, EventArgs e)
         {
-            NameBox.Text = "";
+            richTextBox2.Text = "";
         }
 
 
