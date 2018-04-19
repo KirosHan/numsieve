@@ -1,3 +1,18 @@
 http://num.10010.com/NumApp/NumberCenter/qryNum?callback=jsonp_queryMoreNums&provinceCode=31&cityCode=310&sortType=1&goodsNet=4&qryType=01&searchCategory=3
 
 http://num.10010.com/NumApp/NumberCenter/qryNum?callback=jsonp_queryMoreNums&provinceCode=31&cityCode=310&advancePayLower=0&sortType=1&goodsNet=4&searchCategory=3&qryType=01&numNet=130
+
+
+πÊ‘Ú£∫
+AABB
+AABBCC
+ABAB
+ABCABC
+ABCD
+ABCBA
+ABCCBA
+Ω·Œ≤3A/4A
+AAA
+AAAA
+AAAAA
+AAAAAA
