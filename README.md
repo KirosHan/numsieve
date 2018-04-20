@@ -1,10 +1,14 @@
-# numsieve
+﻿# numsieve
 ## 中国联通扫号器
 ###### C#写的扫号器，因为需求很简单所以直接用之前写的shodan-API工具改了改
 
 ###### url为拉取json的链接，可以直接用Fiddler抓取
 
 ###### 为避免封IP  采用单线程
+
+### 更新日志：
+
+* 20180420 增加部分分类(采用正则表达式)
 
 ### 近期目标：
 
@@ -24,6 +28,7 @@
 
 
 # Release
+[Numsieve 1.0.2.1](https://github.com/KirosHan/numsieve/releases)
 [Numsieve 1.0.1.1](https://github.com/KirosHan/numsieve/releases)
 # 
 

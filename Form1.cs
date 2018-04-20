@@ -106,10 +106,16 @@ namespace Numsieve
             //  string pat = 
             Regex AAAAAArg = new Regex(@"([\d])\1{5}"); //包含AAAAAA号码
             Regex AAAAArg = new Regex(@"([\d])\1{4}"); //包含AAAAA号码
+            //AAABBB
             Regex endArg = new Regex(@"([\d])\1{2}\b"); //AAA结尾号码
             Regex AAAArg = new Regex(@"([\d])\1{3}"); //包含AAAA号码
             Regex AAArg = new Regex(@"([\d])\1{2}"); //包含AAA号码
-
+            //AABB
+            //ABAB
+            //ABCABC
+            //ABCD
+            //ABCBA
+            //ABCCBA
 
 
             if (AAAAAArg.IsMatch(getstr))  // AAAAAA
