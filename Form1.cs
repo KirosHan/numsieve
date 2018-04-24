@@ -23,11 +23,13 @@ namespace Numsieve
             InitializeComponent();
         }
         public bool isrun = false; //全局变量 描述运行状态
+        public int delay = 1000; //全局变量 延迟时间（毫秒）
         private void button1_Click(object sender, EventArgs e)
         {
 
             if (isrun == false)
             {//开始
+                delay = Int32.Parse(numericUpDown1.Value.ToString()) * 1000;
                 isrun = true;
                 Thread thread = new Thread(new ParameterizedThreadStart(delegate { Request(); }));
                 thread.Start();
@@ -94,11 +96,13 @@ namespace Numsieve
                     addTostaBox(string.Format("Error: 获取数据失败 -"+count_neterror.ToString()));
                     count_neterror++;
                 }
-
+                System.Threading.Thread.Sleep(delay);//单线程循环延迟
             }
             addTostaBox(string.Format("Info: 线程已结束"));
             Thread.CurrentThread.Abort();
 
+
+            
         }
 
         public void match(string getstr)
@@ -110,12 +114,14 @@ namespace Numsieve
             Regex endArg = new Regex(@"([\d])\1{2}\b"); //AAA结尾号码
             Regex AAAArg = new Regex(@"([\d])\1{3}"); //包含AAAA号码
             Regex AAArg = new Regex(@"([\d])\1{2}"); //包含AAA号码
-            //AABB
-            //ABAB
-            //ABCABC
-            //ABCD
-            //ABCBA
-            //ABCCBA
+            //---------------------------
+            Regex AABBrg = new Regex(@"([\d])\1{1}([\d])\2{1}");  //AABB
+
+            Regex ABABrg = new Regex(@"([\d])([\d])\1\2");  //ABAB
+            Regex ABCABCrg = new Regex(@"(012|123|234|345|456|567|678|789|987|876|765|654|543|432|321|210)\1{1}");  //ABCABC
+            Regex ABCDrg = new Regex(@"0123|1234|2345|3456|4567|5678|6789|7890|0987|9876|8765|7654|6543|5432|4321|3210");  //ABCD
+            Regex ABCBArg = new Regex(@"01210|12321|23432|34543|45654|56765|67876|78987|89098");//ABCBA
+            Regex ABCCBArg = new Regex(@"012210|123321|234432|345543|456654|567765|678876|789987|890098");//ABCCBA
 
 
             if (AAAAAArg.IsMatch(getstr))  // AAAAAA
@@ -126,10 +132,6 @@ namespace Numsieve
             {
                 addToBox(getstr + "\r\n", AAAAAbox);
             }
-            else if (endArg.IsMatch(getstr))  //AAA结尾
-            {
-                addToBox(getstr + "\r\n", endAAAbox);
-            }
             else if (AAAArg.IsMatch(getstr)) //AAAA
             {
                 addToBox(getstr + "\r\n", AAAAbox);
@@ -138,8 +140,34 @@ namespace Numsieve
             {
                 addToBox(getstr + "\r\n", AAAbox);
             }
-
-
+            if (endArg.IsMatch(getstr))  //AAA结尾
+            {
+                addToBox(getstr + "\r\n", endAAAbox);
+            }
+            if (AABBrg.IsMatch(getstr)) //AABB
+            {
+                addToBox(getstr + "\r\n", AABBbox);
+            }
+            if (ABABrg.IsMatch(getstr)) //ABAB
+            {
+                addToBox(getstr + "\r\n", ABABbox);
+            }
+            if (ABCABCrg.IsMatch(getstr)) //ABCABC
+            {
+                addToBox(getstr + "\r\n", ABCABCbox);
+            }
+            if (ABCDrg.IsMatch(getstr)) //ABCD
+            {
+                addToBox(getstr + "\r\n", ABCDbox);
+            }
+            if (ABCBArg.IsMatch(getstr)) //ABCD
+            {
+                addToBox(getstr + "\r\n", ABCBAbox);
+            }
+            if (ABCCBArg.IsMatch(getstr)) //ABCD
+            {
+                addToBox(getstr + "\r\n", ABCCBAbox);
+            }
 
         }
  

@@ -8,10 +8,12 @@
 
 ### 更新日志：
 
+* 20180424 分类功能基本完成（后续可能添加自定义规则），增加自定义防封延迟时间
 * 20180420 增加部分分类(采用正则表达式P.S.持续过快刷新仍然会暂时封锁，过一会会好，后续版本会解决
 
 ### 近期目标：
 
+* -添加防封延迟-
 * 添加号码分类
 * 添加重复过滤
 * 添加拉取间隔控制功能以避免被封
@@ -24,11 +26,12 @@
 
  ### 界面
 
-![pic](http://storage.iceagedata.com/github/numsieve080420.PNG)
+![pic](http://storage.iceagedata.com/github/numsieve20180424.PNG)
 # 
 
 
 # Release
+[Numsieve 1.0.3.1](https://github.com/KirosHan/numsieve/releases)
 [Numsieve 1.0.2.1](https://github.com/KirosHan/numsieve/releases)
 [Numsieve 1.0.1.1](https://github.com/KirosHan/numsieve/releases)
 # 
