@@ -13,7 +13,7 @@
 
 ### 近期目标：
 
-* -添加防封延迟-
+* ~~添加防封延迟~~
 * 添加号码分类
 * 添加重复过滤
 * 添加拉取间隔控制功能以避免被封
@@ -31,9 +31,9 @@
 
 
 # Release
-[Numsieve 1.0.3.1](https://github.com/KirosHan/numsieve/releases)
-[Numsieve 1.0.2.1](https://github.com/KirosHan/numsieve/releases)
-[Numsieve 1.0.1.1](https://github.com/KirosHan/numsieve/releases)
+* [Numsieve 1.0.3.1](https://github.com/KirosHan/numsieve/releases)
+* [Numsieve 1.0.2.1](https://github.com/KirosHan/numsieve/releases)
+* [Numsieve 1.0.1.1](https://github.com/KirosHan/numsieve/releases)
 # 
 
 
