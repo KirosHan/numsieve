@@ -18,6 +18,9 @@ namespace Numsieve
 {
     public partial class Form1 : Form
     {
+        private ChromeHelper chrome = null;
+        private CaptureListFrm captureFrm = null;
+        //private DownLoadFrm downFrm = null;
         public Form1()
         {
             InitializeComponent();
@@ -291,6 +294,24 @@ namespace Numsieve
             catch
             {
                 addTostaBox(string.Format("Error: 线程错误，重试中..."));
+            }
+        }
+
+        private void 功能ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 地址获取器ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (captureFrm == null)
+            {
+                captureFrm = new CaptureListFrm(this.chrome);
+                captureFrm.Show();
+            }
+            else
+            {
+                captureFrm.Show();
             }
         }
     }
