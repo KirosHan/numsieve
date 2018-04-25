@@ -69,15 +69,19 @@
             this.label13 = new System.Windows.Forms.Label();
             this.ABCCBAbox = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.地址获取器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // stabox
             // 
             this.stabox.FormattingEnabled = true;
             this.stabox.ItemHeight = 12;
-            this.stabox.Location = new System.Drawing.Point(14, 433);
+            this.stabox.Location = new System.Drawing.Point(14, 454);
             this.stabox.Margin = new System.Windows.Forms.Padding(2);
             this.stabox.Name = "stabox";
             this.stabox.Size = new System.Drawing.Size(682, 52);
@@ -106,7 +110,7 @@
             // 
             // ResultBox
             // 
-            this.ResultBox.Location = new System.Drawing.Point(14, 103);
+            this.ResultBox.Location = new System.Drawing.Point(14, 124);
             this.ResultBox.Margin = new System.Windows.Forms.Padding(2);
             this.ResultBox.Name = "ResultBox";
             this.ResultBox.Size = new System.Drawing.Size(110, 140);
@@ -115,7 +119,7 @@
             // 
             // urltxt
             // 
-            this.urltxt.Location = new System.Drawing.Point(82, 18);
+            this.urltxt.Location = new System.Drawing.Point(82, 39);
             this.urltxt.Margin = new System.Windows.Forms.Padding(2);
             this.urltxt.Name = "urltxt";
             this.urltxt.Size = new System.Drawing.Size(614, 21);
@@ -127,7 +131,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 20);
+            this.label1.Location = new System.Drawing.Point(16, 41);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
@@ -136,7 +140,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(598, 49);
+            this.button1.Location = new System.Drawing.Point(598, 70);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 21);
@@ -154,7 +158,7 @@
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4,
             this.toolStripStatusLabel5});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 497);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 523);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
             this.statusStrip1.Size = new System.Drawing.Size(709, 22);
@@ -193,7 +197,7 @@
             // 
             // AAAAAAbox
             // 
-            this.AAAAAAbox.Location = new System.Drawing.Point(129, 103);
+            this.AAAAAAbox.Location = new System.Drawing.Point(129, 124);
             this.AAAAAAbox.Name = "AAAAAAbox";
             this.AAAAAAbox.Size = new System.Drawing.Size(110, 140);
             this.AAAAAAbox.TabIndex = 33;
@@ -220,7 +224,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(127, 82);
+            this.label2.Location = new System.Drawing.Point(127, 103);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
@@ -229,7 +233,7 @@
             // 
             // AAAAAbox
             // 
-            this.AAAAAbox.Location = new System.Drawing.Point(244, 103);
+            this.AAAAAbox.Location = new System.Drawing.Point(244, 124);
             this.AAAAAbox.Margin = new System.Windows.Forms.Padding(2);
             this.AAAAAbox.Name = "AAAAAbox";
             this.AAAAAbox.Size = new System.Drawing.Size(110, 140);
@@ -239,7 +243,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(242, 82);
+            this.label3.Location = new System.Drawing.Point(242, 103);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 12);
@@ -248,7 +252,7 @@
             // 
             // AAAAbox
             // 
-            this.AAAAbox.Location = new System.Drawing.Point(358, 103);
+            this.AAAAbox.Location = new System.Drawing.Point(358, 124);
             this.AAAAbox.Margin = new System.Windows.Forms.Padding(2);
             this.AAAAbox.Name = "AAAAbox";
             this.AAAAbox.Size = new System.Drawing.Size(110, 140);
@@ -258,7 +262,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(356, 82);
+            this.label4.Location = new System.Drawing.Point(356, 103);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
@@ -267,7 +271,7 @@
             // 
             // AAAbox
             // 
-            this.AAAbox.Location = new System.Drawing.Point(472, 103);
+            this.AAAbox.Location = new System.Drawing.Point(472, 124);
             this.AAAbox.Margin = new System.Windows.Forms.Padding(2);
             this.AAAbox.Name = "AAAbox";
             this.AAAbox.Size = new System.Drawing.Size(110, 140);
@@ -277,7 +281,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(470, 82);
+            this.label5.Location = new System.Drawing.Point(470, 103);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
@@ -287,7 +291,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(584, 82);
+            this.label6.Location = new System.Drawing.Point(584, 103);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 12);
@@ -296,7 +300,7 @@
             // 
             // endAAAbox
             // 
-            this.endAAAbox.Location = new System.Drawing.Point(586, 103);
+            this.endAAAbox.Location = new System.Drawing.Point(586, 124);
             this.endAAAbox.Margin = new System.Windows.Forms.Padding(2);
             this.endAAAbox.Name = "endAAAbox";
             this.endAAAbox.Size = new System.Drawing.Size(110, 140);
@@ -306,7 +310,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 82);
+            this.label7.Location = new System.Drawing.Point(12, 103);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 41;
@@ -315,7 +319,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 51);
+            this.label8.Location = new System.Drawing.Point(16, 72);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 12);
             this.label8.TabIndex = 42;
@@ -323,7 +327,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(82, 49);
+            this.numericUpDown1.Location = new System.Drawing.Point(82, 70);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -340,7 +344,7 @@
             // 
             // AABBbox
             // 
-            this.AABBbox.Location = new System.Drawing.Point(13, 278);
+            this.AABBbox.Location = new System.Drawing.Point(13, 299);
             this.AABBbox.Name = "AABBbox";
             this.AABBbox.Size = new System.Drawing.Size(110, 140);
             this.AABBbox.TabIndex = 33;
@@ -349,7 +353,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 257);
+            this.label9.Location = new System.Drawing.Point(11, 278);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
@@ -358,7 +362,7 @@
             // 
             // ABCABCbox
             // 
-            this.ABCABCbox.Location = new System.Drawing.Point(244, 278);
+            this.ABCABCbox.Location = new System.Drawing.Point(244, 299);
             this.ABCABCbox.Name = "ABCABCbox";
             this.ABCABCbox.Size = new System.Drawing.Size(110, 140);
             this.ABCABCbox.TabIndex = 33;
@@ -367,7 +371,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(242, 257);
+            this.label10.Location = new System.Drawing.Point(242, 278);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 12);
@@ -376,7 +380,7 @@
             // 
             // ABABbox
             // 
-            this.ABABbox.Location = new System.Drawing.Point(129, 278);
+            this.ABABbox.Location = new System.Drawing.Point(129, 299);
             this.ABABbox.Name = "ABABbox";
             this.ABABbox.Size = new System.Drawing.Size(110, 140);
             this.ABABbox.TabIndex = 33;
@@ -385,7 +389,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(127, 257);
+            this.label11.Location = new System.Drawing.Point(127, 278);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 12);
@@ -394,7 +398,7 @@
             // 
             // ABCDbox
             // 
-            this.ABCDbox.Location = new System.Drawing.Point(358, 278);
+            this.ABCDbox.Location = new System.Drawing.Point(358, 299);
             this.ABCDbox.Name = "ABCDbox";
             this.ABCDbox.Size = new System.Drawing.Size(110, 140);
             this.ABCDbox.TabIndex = 33;
@@ -403,7 +407,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(356, 257);
+            this.label12.Location = new System.Drawing.Point(356, 278);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
@@ -412,7 +416,7 @@
             // 
             // ABCBAbox
             // 
-            this.ABCBAbox.Location = new System.Drawing.Point(472, 278);
+            this.ABCBAbox.Location = new System.Drawing.Point(472, 299);
             this.ABCBAbox.Name = "ABCBAbox";
             this.ABCBAbox.Size = new System.Drawing.Size(110, 140);
             this.ABCBAbox.TabIndex = 33;
@@ -421,7 +425,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(470, 257);
+            this.label13.Location = new System.Drawing.Point(470, 278);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 12);
@@ -430,7 +434,7 @@
             // 
             // ABCCBAbox
             // 
-            this.ABCCBAbox.Location = new System.Drawing.Point(586, 278);
+            this.ABCCBAbox.Location = new System.Drawing.Point(586, 299);
             this.ABCCBAbox.Name = "ABCCBAbox";
             this.ABCCBAbox.Size = new System.Drawing.Size(110, 140);
             this.ABCCBAbox.TabIndex = 33;
@@ -439,18 +443,42 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(584, 257);
+            this.label14.Location = new System.Drawing.Point(584, 278);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(41, 12);
             this.label14.TabIndex = 36;
             this.label14.Text = "ABCCBA";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.功能ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(709, 25);
+            this.menuStrip1.TabIndex = 44;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 功能ToolStripMenuItem
+            // 
+            this.功能ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.地址获取器ToolStripMenuItem});
+            this.功能ToolStripMenuItem.Name = "功能ToolStripMenuItem";
+            this.功能ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.功能ToolStripMenuItem.Text = "功能";
+            // 
+            // 地址获取器ToolStripMenuItem
+            // 
+            this.地址获取器ToolStripMenuItem.Name = "地址获取器ToolStripMenuItem";
+            this.地址获取器ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.地址获取器ToolStripMenuItem.Text = "地址获取器";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 519);
+            this.ClientSize = new System.Drawing.Size(709, 545);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -479,6 +507,7 @@
             this.Controls.Add(this.AABBbox);
             this.Controls.Add(this.AAAAAAbox);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.stabox);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -488,13 +517,17 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NumSieve     By Kiros ";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,6 +575,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox ABCCBAbox;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 功能ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 地址获取器ToolStripMenuItem;
     }
 }
 
