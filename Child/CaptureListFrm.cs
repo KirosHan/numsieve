@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -32,6 +33,9 @@ namespace Numsieve
         /// 默认编码方式
         /// </summary>
         private Encoding defaultEncode = Encoding.GetEncoding("gbk");
+
+        private ContextMenuStrip strip = new ContextMenuStrip();//1
+        
 
         public CaptureListFrm()
         {
@@ -66,12 +70,13 @@ namespace Numsieve
         {
             this.listView1.FullRowSelect = true;
             this.listView1.Columns.Add("开始时间", 60, HorizontalAlignment.Left);
+            this.listView1.Columns.Add("地址", 600, HorizontalAlignment.Left);
             this.listView1.Columns.Add("耗时", 60, HorizontalAlignment.Left);
             this.listView1.Columns.Add("方式", 60, HorizontalAlignment.Left);
             this.listView1.Columns.Add("结果", 60, HorizontalAlignment.Left);
             this.listView1.Columns.Add("收到长度", 60, HorizontalAlignment.Left);
             this.listView1.Columns.Add("类型", 60, HorizontalAlignment.Left);
-            this.listView1.Columns.Add("地址", 600, HorizontalAlignment.Left);
+            
 
             this.listView2.FullRowSelect = true;
             this.listView2.Columns.Add("名称", 160, HorizontalAlignment.Left);
@@ -84,12 +89,14 @@ namespace Numsieve
 
         private void CaptureListFrm_Load(object sender, EventArgs e)
         {
+            strip.Items.Add("item1");//2
             //Application.ApplicationExit += Application_ApplicationExit;
             Execute();
             Thread t = new Thread(ExecuteThread);
             t.IsBackground = true;
             t.Start();
         }
+      
 
         private void ExecuteThread()
         {
@@ -136,9 +143,19 @@ namespace Numsieve
                     {
                         ListViewItem item = new ListViewItem(DateTime.Now.ToString("HH:mm:ss"));
                         item.Tag = model.Key;
-                        item.SubItems.AddRange(new string[] { "", "", "", "", "", model.Url });
+                        item.SubItems.AddRange(new string[] { model.Url ,"", "", "", "", ""});
 
                         p.Items.Add(item);
+
+                        if (checkBox1.Checked == true)
+                        {
+                            Regex rg = new Regex(@"num.10010.com"); //验证域名
+                            if (rg.IsMatch(model.Url))
+                            {
+                                Clipboard.SetText(model.Url);
+                                MessageBox.Show("检测到可使用的URL并已复制到剪贴板：" + model.Url);
+                            }
+                        }
                     }
 
                     p.EndUpdate();
@@ -164,6 +181,7 @@ namespace Numsieve
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            /*  bug调试中
             LoadHelper.ClearAll();
             this.Invoke(new Action<ListView>(p =>
             {
@@ -171,6 +189,7 @@ namespace Numsieve
                 p.Items.Clear();
                 p.EndUpdate();
             }), this.listView1);
+            */    
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -234,6 +253,9 @@ namespace Numsieve
                 p.EndUpdate();
             }), listView);
         }
+
+        
+
 
         #region 右键菜单
         private void EncodingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -306,6 +328,20 @@ namespace Numsieve
         private void Application_ApplicationExit(object sender, EventArgs e)
         {
             Cef.Shutdown();
+        }
+       // listViewtcmedicineSearch.MouseClick += new MouseEventHandler(listViewtcmedicineSearchMouseClick);
+
+        private void listViewtcmedicineSearchMouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                strip.Show(listView1, e.Location);//鼠标右键按下弹出菜单
+            }
         }
     }
 }
