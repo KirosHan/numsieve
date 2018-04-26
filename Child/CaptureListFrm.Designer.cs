@@ -13,12 +13,16 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            Hide();  //避免释放资源后chrome无法再次加载
+            /*
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
             base.Dispose(disposing);
+            */
         }
+
 
         #region Windows Form Designer generated code
 
@@ -29,6 +33,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaptureListFrm));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.编码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utf8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -383,8 +388,11 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.btnStart);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CaptureListFrm";
-            this.Text = "抓包";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "URL抓取器";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CaptureListFrm_FormClosed);
             this.Load += new System.EventHandler(this.CaptureListFrm_Load);
             this.Leave += new System.EventHandler(this.CaptureListFrm_Leave);
             this.contextMenuStrip1.ResumeLayout(false);

@@ -15,3 +15,4 @@ C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.url.resources
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.csproj.GenerateResource.Cache
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.exe
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.pdb
+C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.csprojResolveAssemblyReference.cache

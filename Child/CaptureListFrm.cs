@@ -323,7 +323,7 @@ namespace Numsieve
 
         private void CaptureListFrm_Leave(object sender, EventArgs e)
         {
-            
+           // Cef.Shutdown();
         }
         private void Application_ApplicationExit(object sender, EventArgs e)
         {
@@ -343,5 +343,16 @@ namespace Numsieve
                 strip.Show(listView1, e.Location);//鼠标右键按下弹出菜单
             }
         }
+
+        private void CaptureListFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Cef.Shutdown();
+        }
+        public void Close1()
+        {
+            this.Dispose();
+
+        }
+
     }
 }

@@ -18,7 +18,7 @@ namespace Numsieve
 {
     public partial class Form1 : Form
     {
-        private ChromeHelper chrome = null;
+       // private ChromeHelper chrome = null;    
         private CaptureListFrm captureFrm = null;
         //private DownLoadFrm downFrm = null;
         public Form1()
@@ -43,7 +43,7 @@ namespace Numsieve
                 isrun = false;
                 button1.Text = "START ! ! !";
             }
-        
+
         }
         public delegate void RequestDelegate();
 
@@ -53,8 +53,8 @@ namespace Numsieve
 
             int count_neterror = 1;  //统计连接错误次数
             int count = 1;//统计扫描次数
-            
-           // ServicePointManager.DefaultConnectionLimit = 1000;
+
+            // ServicePointManager.DefaultConnectionLimit = 1000;
             addTostaBox(string.Format("Info: 线程已启动"));
             while (isrun == true)
             {
@@ -64,10 +64,10 @@ namespace Numsieve
                     isrun = false;
                     MessageBox.Show("url不能为空");
                 }
-                   
+
                 string GetStr = HttpGet(url);
 
-               
+
 
 
                 if (GetStr != "")
@@ -80,11 +80,11 @@ namespace Numsieve
 
                         for (int i = 0; i <= 1188; i += 12)  //每次拉取json都是100个号码，过滤掉无用信息
                         {
-                            
-                            addToBox(array[i].ToString() + "\r\n",ResultBox);
+
+                            addToBox(array[i].ToString() + "\r\n", ResultBox);
                             match(array[i].ToString());
                         }
-                        addTostaBox(string.Format("Info: 扫描完成 "+count.ToString()+" 次"));
+                        addTostaBox(string.Format("Info: 扫描完成 " + count.ToString() + " 次"));
                         count++;
                     }
                     catch
@@ -96,7 +96,7 @@ namespace Numsieve
                 }
                 else
                 {
-                    addTostaBox(string.Format("Error: 获取数据失败 -"+count_neterror.ToString()));
+                    addTostaBox(string.Format("Error: 获取数据失败 -" + count_neterror.ToString()));
                     count_neterror++;
                 }
                 System.Threading.Thread.Sleep(delay);//单线程循环延迟
@@ -105,7 +105,7 @@ namespace Numsieve
             Thread.CurrentThread.Abort();
 
 
-            
+
         }
 
         public void match(string getstr)
@@ -129,7 +129,7 @@ namespace Numsieve
 
             if (AAAAAArg.IsMatch(getstr))  // AAAAAA
             {
-                addToBox(getstr+"\r\n", AAAAAAbox);
+                addToBox(getstr + "\r\n", AAAAAAbox);
             }
             else if (AAAAArg.IsMatch(getstr)) //AAAAA
             {
@@ -173,7 +173,7 @@ namespace Numsieve
             }
 
         }
- 
+
         public string HttpGet(string url)
         {
             try
@@ -194,18 +194,18 @@ namespace Numsieve
                 retString = retString.Substring(index + 1);
                 index = retString.IndexOf(')');
                 retString = retString.Substring(0, index);
-           
+
 
                 return retString;
             }
             catch
             {
-               // MessageBox.Show("Something is wrong !");
+                // MessageBox.Show("Something is wrong !");
                 return "";
             }
         }
 
-       
+
 
 
 
@@ -213,7 +213,7 @@ namespace Numsieve
 
         delegate void addToBoxDelegate(string str, RichTextBox richtextbox);
 
-        private void addToBox(string str ,RichTextBox richtextbox)
+        private void addToBox(string str, RichTextBox richtextbox)
         {
             /*/分类存放
             if (type == 0)
@@ -266,7 +266,7 @@ namespace Numsieve
             }
         }
 
- 
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -289,7 +289,7 @@ namespace Numsieve
                     match(array[i].ToString());
                 }
                 addTostaBox(string.Format("Info: 扫描完成 ... 次"));
-                
+
             }
             catch
             {
@@ -304,14 +304,25 @@ namespace Numsieve
 
         private void 地址获取器ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             if (captureFrm == null)
             {
-                captureFrm = new CaptureListFrm(this.chrome);
+                captureFrm = new CaptureListFrm();
                 captureFrm.Show();
             }
             else
             {
                 captureFrm.Show();
+            }
+
+
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (captureFrm != null)
+            {
+                captureFrm.Close1();
             }
         }
     }
