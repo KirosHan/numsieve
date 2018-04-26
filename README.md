@@ -41,5 +41,8 @@
 ![pic](http://storage.iceagedata.com/github/numsieve.gif)
 ![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/numsieve.gif)
 
+### 打赏
+支付宝![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/ali.jpg)
+微信![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/wechat.jpg)
 # License
 MIT license. See [LICENSE](https://github.com/KirosHan/numsieve/blob/master/LICENSE)  for details.
