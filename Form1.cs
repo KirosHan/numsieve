@@ -281,6 +281,8 @@ namespace Numsieve
             else
             {
                 richtextbox.AppendText(str);
+                richtextbox.SelectionStart = richtextbox.Text.Length; //Set the current caret position at the end
+                richtextbox.ScrollToCaret(); //Now scroll it automatically
 
             }
 
