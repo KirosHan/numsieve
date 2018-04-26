@@ -20,22 +20,23 @@
 * ~~添加json获取工具~~
 * 添加防封代理
 
-### 远期目标：
+### 界面
 
-* 完成参数选项，自助配置解析json，形成终极版
-
- ### 界面
-
-![pic](http://storage.iceagedata.com/github/numsieve20180424.PNG)
+![pic](http://storage.iceagedata.com/github/numsieve180426_1.PNG)
+![pic](http://storage.iceagedata.com/github/numsieve180426_2.PNG)
 # 
 
 
 # Release
-* [Numsieve 1.0.3.1](https://github.com/KirosHan/numsieve/releases)
-* [Numsieve 1.0.2.1](https://github.com/KirosHan/numsieve/releases)
-* [Numsieve 1.0.1.1](https://github.com/KirosHan/numsieve/releases)
+* [Numsieve 1.1.2.1](https://github.com/KirosHan/numsieve/releases)
+* ~~[Numsieve 1.0.3.1](https://github.com/KirosHan/numsieve/releases)~~
+* ~~[Numsieve 1.0.2.1](https://github.com/KirosHan/numsieve/releases)~~
+* ~~[Numsieve 1.0.1.1](https://github.com/KirosHan/numsieve/releases)~~
 # 
 
+### 使用方法
+* Step1.进入URL获取器，勾选自动发现URL并点击开始，在内置浏览器中前往选号界面，程序会自动发现可用URL并复制
+* Step2.回到程序主界面，将复制的URL填入对应输入框，点击开始即可开始扫号
 
 # License
 MIT license. See [LICENSE](https://github.com/KirosHan/numsieve/blob/master/LICENSE)  for details.
