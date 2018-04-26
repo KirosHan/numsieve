@@ -469,12 +469,14 @@
             this.功能ToolStripMenuItem.Name = "功能ToolStripMenuItem";
             this.功能ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.功能ToolStripMenuItem.Text = "功能";
+            this.功能ToolStripMenuItem.Click += new System.EventHandler(this.功能ToolStripMenuItem_Click);
             // 
             // 地址获取器ToolStripMenuItem
             // 
             this.地址获取器ToolStripMenuItem.Name = "地址获取器ToolStripMenuItem";
-            this.地址获取器ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.地址获取器ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.地址获取器ToolStripMenuItem.Text = "地址获取器";
+            this.地址获取器ToolStripMenuItem.Click += new System.EventHandler(this.地址获取器ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
@@ -531,6 +533,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NumSieve     By Kiros ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
