@@ -36,12 +36,12 @@ namespace Numsieve
                 isrun = true;
                 Thread thread = new Thread(new ParameterizedThreadStart(delegate { Request(); }));
                 thread.Start();
-                button1.Text = "STOP ! ! !";
+                setstatus(true);
             }
             else {
                 //停止
                 isrun = false;
-                button1.Text = "START ! ! !";
+                setstatus(false);
             }
 
         }
@@ -66,10 +66,6 @@ namespace Numsieve
                 }
 
                 string GetStr = HttpGet(url);
-
-
-
-
                 if (GetStr != "")
                 {
                     try
@@ -96,15 +92,56 @@ namespace Numsieve
                 }
                 else
                 {
-                    addTostaBox(string.Format("Error: 获取数据失败 -" + count_neterror.ToString()));
+                    addTostaBox(string.Format("Error: 获取数据失败 （" + count_neterror.ToString()+")"));
                     count_neterror++;
                 }
                 System.Threading.Thread.Sleep(delay);//单线程循环延迟
             }
             addTostaBox(string.Format("Info: 线程已结束"));
+            isrun = false;
+            setstatus(false);
             Thread.CurrentThread.Abort();
 
 
+
+        }
+
+
+        public delegate void setstatusDelegate(bool sta);
+        public void setstatus(bool sta)
+        {
+            if (sta == true)
+            {
+                if (button1.InvokeRequired)
+                {
+                    setstatusDelegate d = setstatus;
+                    button1.Invoke(d, sta);
+
+                }
+                else
+                {
+                    button1.Text = "STOP ! ! !";
+                }
+            
+                开始ToolStripMenuItem.Enabled = false;
+                停止ToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                if (button1.InvokeRequired)
+                {
+                    setstatusDelegate d = setstatus;
+                    button1.Invoke(d, sta);
+
+                }
+                else
+                {
+                    button1.Text = "START ! ! !";
+                }
+                
+                开始ToolStripMenuItem.Enabled = true;
+                停止ToolStripMenuItem.Enabled = false;
+            }
 
         }
 
@@ -320,9 +357,89 @@ namespace Numsieve
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            isrun = false;
             if (captureFrm != null)
             {
                 captureFrm.Close1();
+            }
+        }
+
+        private void 开始ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isrun == false)
+            {//开始
+                delay = Int32.Parse(numericUpDown1.Value.ToString()) * 1000;
+                isrun = true;
+                Thread thread = new Thread(new ParameterizedThreadStart(delegate { Request(); }));
+                thread.Start();
+                button1.Text = "STOP ! ! !";
+                开始ToolStripMenuItem.Enabled = false;
+                停止ToolStripMenuItem.Enabled = true;
+            }
+        }
+
+        private void 停止ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isrun != false)
+                //停止
+                isrun = false;
+            button1.Text = "START ! ! !";
+            开始ToolStripMenuItem.Enabled = true;
+            停止ToolStripMenuItem.Enabled = false;
+        }
+
+        private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About aboutfrm = new About();
+            aboutfrm.ShowDialog();
+        }
+
+        private void 防封代理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("该功能将在后续版本中开放，敬请期待！");
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.onbeta.com");
+        }
+
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.onsigma.com");
+        }
+
+        private void toolStripStatusLabel3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.fatefox.com");
+        }
+
+        private void toolStripStatusLabel4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.foxplus.io");
+        }
+
+        private void toolStripStatusLabel5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.iceagedata.com");
+        }
+
+        private void 说明ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            spec specfrm = new spec();
+            specfrm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (captureFrm == null)
+            {
+                captureFrm = new CaptureListFrm();
+                captureFrm.Show();
+            }
+            else
+            {
+                captureFrm.Show();
             }
         }
     }

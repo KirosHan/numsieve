@@ -49,3 +49,20 @@
 [0426/101629:ERROR:ipc_channel_win.cc(217)] pipe error: 109
 [0426/101629:WARNING:raw_channel_win.cc(532)] WriteFile: 管道正在被关闭。 (0xE8)
 [0426/101629:WARNING:channel.cc(359)] RawChannel write error
+[0426/141623:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size
+[0426/141645:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size
+[0426/141645:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size
+[0426/141908:ERROR:ipc_channel_win.cc(512)] pipe error: 232
+[0426/141931:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size
+[0426/141931:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size
+[0426/143804:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size
+[0426/144035:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size
+[0426/144424:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size
+[0426/144458:ERROR:ipc_channel_win.cc(217)] pipe error: 109
+[0426/144458:WARNING:raw_channel_win.cc(532)] WriteFile: 管道正在被关闭。 (0xE8)
+[0426/144458:WARNING:channel.cc(359)] RawChannel write error
+[0426/150046:ERROR:ipc_channel_win.cc(217)] pipe error: 109
+[0426/150152:ERROR:ipc_channel_win.cc(512)] pipe error: 232
+[0426/150152:ERROR:ipc_channel_win.cc(217)] pipe error: 109
+[0426/151115:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size
+[0426/151115:ERROR:response_filter_wrapper.cc(48)] potential buffer overflow; data_out_write exceeds data_out_size

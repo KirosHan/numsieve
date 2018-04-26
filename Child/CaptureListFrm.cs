@@ -87,16 +87,24 @@ namespace Numsieve
             this.listView3.Columns.Add("值", 260, HorizontalAlignment.Left);
         }
 
+
         private void CaptureListFrm_Load(object sender, EventArgs e)
         {
-            strip.Items.Add("item1");//2
+            strip.Items.Add("复制URL");//2
+
+            strip.Items[0].Click += new System.EventHandler(this.Item_Click);
             //Application.ApplicationExit += Application_ApplicationExit;
             Execute();
             Thread t = new Thread(ExecuteThread);
             t.IsBackground = true;
             t.Start();
         }
-      
+        private void Item_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(listView1.FocusedItem.SubItems[1].Text.ToString());
+            Clipboard.SetText(listView1.FocusedItem.SubItems[1].Text.ToString());
+            MessageBox.Show("URL已复制：" + listView1.FocusedItem.SubItems[1].Text.ToString());
+        }
 
         private void ExecuteThread()
         {
