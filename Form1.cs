@@ -54,6 +54,14 @@ namespace Numsieve
             int count_neterror = 1;  //统计连接错误次数
             int count = 1;//统计扫描次数
 
+         /*   Regex rg = new Regex(@"m.10010.com/NumApp/NumberCenter"); //匹配URL类型（PC版或者手机版)
+            if (rg.IsMatch（))
+            {
+                Clipboard.SetText(model.Url);
+                MessageBox.Show("检测到可使用的URL并已复制到剪贴板：" + model.Url);
+            }
+            */
+
             // ServicePointManager.DefaultConnectionLimit = 1000;
             addTostaBox(string.Format("Info: 线程已启动"));
             while (isrun == true)
@@ -65,7 +73,7 @@ namespace Numsieve
                     MessageBox.Show("url不能为空");
                 }
 
-                string GetStr = HttpGet(url);
+                string GetStr = jsonhandle( HttpGet(url));
                 if (GetStr != "")
                 {
                     try
@@ -73,8 +81,8 @@ namespace Numsieve
                         string jsonText = GetStr;
                         JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
                         JArray array = (JArray)json1["numArray"];
-
-                        for (int i = 0; i <= 1188; i += 12)  //每次拉取json都是100个号码，过滤掉无用信息
+                        int lengharray = Int32.Parse(json1["splitLen"].ToString());
+                        for (int i = 0; i <= 1188; i += lengharray)  //每次拉取json都是100个号码，过滤掉无用信息
                         {
 
                             addToBox(array[i].ToString() + "\r\n", ResultBox);
@@ -218,21 +226,14 @@ namespace Numsieve
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "GET";
                 request.ContentType = "text/html;charset=UTF-8";
-
+                //对于https://m.10010.com  不添加useragent 无法拉取
+                request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586";
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream myResponseStream = response.GetResponseStream();
                 StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
                 string retString = myStreamReader.ReadToEnd();
                 myStreamReader.Close();
                 myResponseStream.Close();
-
-                //处理下字符串：queryMoreNums -> json
-                int index = retString.IndexOf('(');
-                retString = retString.Substring(index + 1);
-                index = retString.IndexOf(')');
-                retString = retString.Substring(0, index);
-
-
                 return retString;
             }
             catch
@@ -242,19 +243,18 @@ namespace Numsieve
             }
         }
 
+     
+     
 
-
-
-
-
-
-        delegate void addToBoxDelegate(string str, RichTextBox richtextbox);
-
-        private void addToBox(string str, RichTextBox richtextbox)
-        {
-            /*/分类存放
-            if (type == 0)
-            {
+     
+     
+       delegate void addToBoxDelegate(string str, RichTextBox richtextbox);
+        public string jsonhandle(string _str)
+        {   private void addToBox(string str, RichTextBox richtextbox)
+            try   {
+            {       /*/分类存放
+                //处理下字符串：queryMoreNums ->       if (type == 0)
+                int index = _str.IndexOf('(');       {
                 if (richTextBox2.InvokeRequired)
                 {
                     addToresultBoxDelegate d = addToresultBox;
@@ -443,6 +443,11 @@ namespace Numsieve
             {
                 captureFrm.Show();
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(HttpsGet(urltxt.Text.ToString()));
         }
     }
 }
