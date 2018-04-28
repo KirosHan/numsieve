@@ -65,7 +65,7 @@ namespace Numsieve
                     MessageBox.Show("url不能为空");
                 }
 
-                string GetStr = HttpGet(url);
+                string GetStr = jsonhandle(HttpGet(url));
                 if (GetStr != "")
                 {
                     try
@@ -73,8 +73,9 @@ namespace Numsieve
                         string jsonText = GetStr;
                         JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
                         JArray array = (JArray)json1["numArray"];
+                        int length = Int32.Parse(json1["splitLen"].ToString());
 
-                        for (int i = 0; i <= 1188; i += 12)  //每次拉取json都是100个号码，过滤掉无用信息
+                        for (int i = 0; i <= 1188; i += length)  //每次拉取json都是100个号码，过滤掉无用信息
                         {
 
                             addToBox(array[i].ToString() + "\r\n", ResultBox);
@@ -218,6 +219,8 @@ namespace Numsieve
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "GET";
                 request.ContentType = "text/html;charset=UTF-8";
+                //对于https://m.10010.com 不添加useragent无法拉取数据
+                request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586";
 
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream myResponseStream = response.GetResponseStream();
@@ -225,14 +228,6 @@ namespace Numsieve
                 string retString = myStreamReader.ReadToEnd();
                 myStreamReader.Close();
                 myResponseStream.Close();
-
-                //处理下字符串：queryMoreNums -> json
-                int index = retString.IndexOf('(');
-                retString = retString.Substring(index + 1);
-                index = retString.IndexOf(')');
-                retString = retString.Substring(0, index);
-
-
                 return retString;
             }
             catch
@@ -242,7 +237,25 @@ namespace Numsieve
             }
         }
 
+        public string jsonhandle(string _str)
+        {
+            try
+            {
+                //处理下字符串：queryMoreNums -> json
+                int index = _str.IndexOf('(');
+                _str = _str.Substring(index + 1);
+                index = _str.IndexOf(')');
+                _str = _str.Substring(0, index);
+                return _str;
 
+            }
+            catch
+            {
+                return "";
+
+            }
+
+        }
 
 
 
@@ -401,31 +414,8 @@ namespace Numsieve
             MessageBox.Show("该功能将在后续版本中开放，敬请期待！");
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.onbeta.com");
-        }
 
-        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.onsigma.com");
-        }
-
-        private void toolStripStatusLabel3_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.fatefox.com");
-        }
-
-        private void toolStripStatusLabel4_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.foxplus.io");
-        }
-
-        private void toolStripStatusLabel5_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.iceagedata.com");
-        }
-
+       
         private void 说明ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             spec specfrm = new spec();

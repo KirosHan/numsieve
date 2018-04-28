@@ -16,4 +16,3 @@ C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.csproj.GenerateResource.Cac
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.exe
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.pdb
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.spec.resources
-C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.csprojResolveAssemblyReference.cache
