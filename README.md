@@ -29,7 +29,7 @@
 
 
 # Release
-* [Numsieve 1.1.3.1](https://github.com/KirosHan/numsieve/releases)
+* [Numsieve 1.1.3.2](https://github.com/KirosHan/numsieve/releases)
 * ~~[Numsieve 1.1.2.2](https://github.com/KirosHan/numsieve/releases)~~
 * ~~[Numsieve 1.1.2.1](https://github.com/KirosHan/numsieve/releases)~~
 * ~~[Numsieve 1.0.3.1](https://github.com/KirosHan/numsieve/releases)~~
