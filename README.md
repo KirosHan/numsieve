@@ -23,8 +23,8 @@
 
 ### 界面
 
-![pic](http://storage.iceagedata.com/github/numsieve180428_1.PNG)
-![pic](http://storage.iceagedata.com/github/numsieve180426_2.PNG)
+![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/numsieve180428_1.PNG)
+![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/numsieve180426_2.PNG)
 # 
 
 

@@ -3,6 +3,9 @@ http://num.10010.com/NumApp/NumberCenter/qryNum?callback=jsonp_queryMoreNums&pro
 http://num.10010.com/NumApp/NumberCenter/qryNum?callback=jsonp_queryMoreNums&provinceCode=31&cityCode=310&advancePayLower=0&sortType=1&goodsNet=4&searchCategory=3&qryType=01&numNet=130
 
 
+https://m.10010.com/NumApp/NumberCenter/qryNum?callback=jsonp_queryMoreNums&provinceCode=31&cityCode=310&monthFeeLimit=0&groupKey=8300283067&searchCategory=3&net=01&amounts=200&codeTypeCode=&searchValue=&qryType=02&goodsNet=4&_=1524880498214
+
+
 规则优先级：
 AAAAAA
 AAAAA
