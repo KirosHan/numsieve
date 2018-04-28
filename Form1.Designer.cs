@@ -167,7 +167,7 @@
             // 
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
             this.toolStripStatusLabel6.Size = new System.Drawing.Size(93, 17);
-            this.toolStripStatusLabel6.Text = "Version 1.1.3.1";
+            this.toolStripStatusLabel6.Text = "Version 1.1.3.2";
             // 
             // toolStripStatusLabel7
             // 

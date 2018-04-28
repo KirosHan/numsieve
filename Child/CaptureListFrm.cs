@@ -157,8 +157,9 @@ namespace Numsieve
 
                         if (checkBox1.Checked == true)
                         {
-                            Regex rg = new Regex(@"num.10010.com"); //验证域名
-                            if (rg.IsMatch(model.Url))
+                            Regex rg = new Regex(@"num.10010.com/NumApp/NumberCenter"); //验证域名
+                            Regex mobilerg = new Regex(@"m.10010.com/NumApp/NumberCenter"); //验证域名
+                            if (rg.IsMatch(model.Url)|| mobilerg.IsMatch(model.Url))
                             {
                                 Clipboard.SetText(model.Url);
                                 MessageBox.Show("检测到可使用的URL并已复制到剪贴板：" + model.Url);
