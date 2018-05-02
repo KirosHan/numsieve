@@ -11,9 +11,8 @@ C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.About.resources
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.CaptureListFrm.resources
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.Form1.resources
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.Properties.Resources.resources
-C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.url.resources
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.csproj.GenerateResource.Cache
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.exe
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.pdb
 C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.spec.resources
-C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.csprojResolveAssemblyReference.cache
+C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.Capture.resources

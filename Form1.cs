@@ -434,5 +434,17 @@ namespace Numsieve
                 captureFrm.Show();
             }
         }
+
+        private void 地址获取器20ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capture cap = new Capture();
+            cap.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Capture cap = new Capture();
+            cap.ShowDialog();
+        }
     }
 }
