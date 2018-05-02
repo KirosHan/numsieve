@@ -48,5 +48,10 @@
 ### 打赏
 支付宝![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/ali.jpg)
 微信![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/wechat.jpg)
+
+### 反馈
+
+QQ群 548825 点击链接加入群聊【ONBETA技术交流群】：[https://jq.qq.com/?_wv=1027&k=5L8HimB](https://jq.qq.com/?_wv=1027&k=5L8HimB)
+
 # License
 MIT license. See [LICENSE](https://github.com/KirosHan/numsieve/blob/master/LICENSE)  for details.
