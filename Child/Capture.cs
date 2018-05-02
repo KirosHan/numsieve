@@ -184,6 +184,7 @@ namespace Numsieve
             }
             this.button1.Text = "已开始抓取URL";
             this.button1.Enabled = false;
+            System.Diagnostics.Process.Start("http://www.10010.com");
         }
     }
 }
