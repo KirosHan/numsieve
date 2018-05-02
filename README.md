@@ -8,6 +8,7 @@
 
 ### 更新日志：
 
+* 20180502 地址获取器2.0测试中(建议使用地址获取器1.0报错的用户使用新版地址获取器)
 * 20180428 修复m.10010.com链接无法拉取数据bug
 * 20180426 内置了URL获取器，可快速检测json链接
 * 20180424 分类功能基本完成（后续可能添加自定义规则），增加自定义防封延迟时间
@@ -29,7 +30,8 @@
 
 
 # Release
-* [Numsieve 1.1.3.2](https://github.com/KirosHan/numsieve/releases)
+* [Numsieve 1.1.4.13](https://github.com/KirosHan/numsieve/releases)
+* ~~[Numsieve 1.1.3.2](https://github.com/KirosHan/numsieve/releases)~~
 * ~~[Numsieve 1.1.2.2](https://github.com/KirosHan/numsieve/releases)~~
 * ~~[Numsieve 1.1.2.1](https://github.com/KirosHan/numsieve/releases)~~
 * ~~[Numsieve 1.0.3.1](https://github.com/KirosHan/numsieve/releases)~~
