@@ -79,6 +79,9 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -96,10 +99,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.cs">
+    <Compile Include="Child\About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About.Designer.cs">
+    <Compile Include="Child\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="BrowserHelper\DefaultResourceHandlerFactory.cs" />
@@ -109,6 +112,12 @@
     <Compile Include="BrowserHelper\LifeSpanHandler.cs" />
     <Compile Include="BrowserHelper\LoadHelper.cs" />
     <Compile Include="BrowserHelper\RequestHandler.cs" />
+    <Compile Include="Child\Capture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Child\Capture.Designer.cs">
+      <DependentUpon>Capture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Child\CaptureListFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,26 +138,47 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HttpSniffer\HttpPacket.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="spec.cs">
+    <Compile Include="Child\spec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="spec.Designer.cs">
+    <Compile Include="Child\spec.Designer.cs">
       <DependentUpon>spec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sniffer.Filters\AllowFilter.cs" />
+    <Compile Include="Sniffer.Filters\ConfigFilter.cs" />
+    <Compile Include="Sniffer.Filters\DenyFilter.cs" />
+    <Compile Include="Sniffer.Filters\FilterType.cs" />
+    <Compile Include="sniffer\ConnectionCallback.cs" />
+    <Compile Include="sniffer\DataManager.cs" />
+    <Compile Include="sniffer\FilterFactory.cs" />
+    <Compile Include="sniffer\FilterManager.cs" />
+    <Compile Include="sniffer\HeaderParser.cs" />
+    <Compile Include="sniffer\IAllowFilter.cs" />
+    <Compile Include="sniffer\IDenyFilter.cs" />
+    <Compile Include="sniffer\IPv4Datagram.cs" />
+    <Compile Include="sniffer\IPv4DatagramCallback.cs" />
+    <Compile Include="sniffer\IPv4Fragment.cs" />
+    <Compile Include="sniffer\IPv4FragmentCallback.cs" />
+    <Compile Include="sniffer\SnifferErrorCallback.cs" />
+    <Compile Include="sniffer\SnifferException.cs" />
+    <Compile Include="sniffer\SnifferSocket.cs" />
+    <Compile Include="sniffer\SocketPair.cs" />
+    <Compile Include="sniffer\TcpPacket.cs" />
+    <Compile Include="sniffer\TcpPacketCallback.cs" />
+    <Compile Include="sniffer\UdpDatagram.cs" />
+    <Compile Include="sniffer\UdpDatagramCallback.cs" />
     <Compile Include="th\CefSharpSchemeHandler.cs" />
     <Compile Include="th\CefSharpSchemeHandlerFactory.cs" />
     <Compile Include="Tool\Logs.cs" />
     <Compile Include="Tool\Win32Api.cs" />
-    <Compile Include="url.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="url.Designer.cs">
-      <DependentUpon>url.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="About.resx">
+    <EmbeddedResource Include="Child\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Child\Capture.resx">
+      <DependentUpon>Capture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Child\CaptureListFrm.resx">
       <DependentUpon>CaptureListFrm.cs</DependentUpon>
@@ -166,13 +196,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="spec.resx">
+    <EmbeddedResource Include="Child\spec.resx">
       <DependentUpon>spec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="url.resx">
-      <DependentUpon>url.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -183,6 +213,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sniffer\app.manifest" />
+    <None Include="sniffer\Sniffer.suo" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="numsieve.ico" />
