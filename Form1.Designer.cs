@@ -69,8 +69,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.地址获取器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.防封代理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.地址获取器20ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.防封代理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.开始ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.停止ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -168,13 +168,13 @@
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(93, 17);
-            this.toolStripStatusLabel6.Text = "Version 1.1.3.2";
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(83, 17);
+            this.toolStripStatusLabel6.Text = "Version 1.1.4";
             // 
             // toolStripStatusLabel7
             // 
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(605, 17);
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(584, 17);
             this.toolStripStatusLabel7.Spring = true;
             // 
             // AAAAAAbox
@@ -463,19 +463,19 @@
             this.地址获取器ToolStripMenuItem.Text = "地址获取器 1.0";
             this.地址获取器ToolStripMenuItem.Click += new System.EventHandler(this.地址获取器ToolStripMenuItem_Click);
             // 
-            // 防封代理ToolStripMenuItem
-            // 
-            this.防封代理ToolStripMenuItem.Name = "防封代理ToolStripMenuItem";
-            this.防封代理ToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.防封代理ToolStripMenuItem.Text = "防封代理";
-            this.防封代理ToolStripMenuItem.Click += new System.EventHandler(this.防封代理ToolStripMenuItem_Click);
-            // 
             // 地址获取器20ToolStripMenuItem
             // 
             this.地址获取器20ToolStripMenuItem.Name = "地址获取器20ToolStripMenuItem";
             this.地址获取器20ToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.地址获取器20ToolStripMenuItem.Text = "地址获取器 2.0 (测试中)";
             this.地址获取器20ToolStripMenuItem.Click += new System.EventHandler(this.地址获取器20ToolStripMenuItem_Click);
+            // 
+            // 防封代理ToolStripMenuItem
+            // 
+            this.防封代理ToolStripMenuItem.Name = "防封代理ToolStripMenuItem";
+            this.防封代理ToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.防封代理ToolStripMenuItem.Text = "防封代理";
+            this.防封代理ToolStripMenuItem.Click += new System.EventHandler(this.防封代理ToolStripMenuItem_Click);
             // 
             // 控制ToolStripMenuItem
             // 
