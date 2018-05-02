@@ -446,5 +446,15 @@ namespace Numsieve
             Capture cap = new Capture();
             cap.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(HttpGet("https://github.com/KirosHan/numsieve/blob/master/json.txt"));
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            toolStripStatusLabel6.Text = "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
     }
 }
