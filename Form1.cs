@@ -20,6 +20,7 @@ namespace Numsieve
     {
        // private ChromeHelper chrome = null;    
         private CaptureListFrm captureFrm = null;
+        private int adplay = 0;//全局播放控制
         //private DownLoadFrm downFrm = null;
         public Form1()
         {
@@ -447,14 +448,106 @@ namespace Numsieve
             cap.ShowDialog();
         }
 
+
+        private void checkversion(string s_version,string s_date,bool isshow)  //根据版本号查找更新
+        {
+            String[] arr_s_version = s_version.Split('.');
+            String[] arr_now_version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString().Split('.');
+            
+            for (int i =0;i<=2;i++)
+            {
+                if (int.Parse(arr_now_version[i]) < int.Parse(arr_s_version[i]))
+                {
+                    toolStripStatusLabel6.Text = "新版本已发布: v" + s_version;
+                    if (isshow == true)
+                    {
+                        download downloadfrm = new download(s_version, s_date);
+                        downloadfrm.Show();
+                       // MessageBox.Show("有新版本!" + s_version);
+                    }
+                }
+            }
+
+        }
         private void button7_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(HttpGet("https://github.com/KirosHan/numsieve/blob/master/json.txt"));
+            try
+            {
+                string jsonText = HttpGet("http://www.onsigma.com/numsieve.php");
+                JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
+                string s_version = json1["version"].ToString();
+                string s_date = json1["date"].ToString();
+                string s_notice = json1["notice"].ToString();
+                string s_ad = json1["ad"].ToString();
+                adplay = int.Parse(json1["isplay"].ToString());
+
+                checkversion(s_version,s_date,true);
+                toolStripStatusLabel7.Text = s_notice;
+
+                if(adplay == 1)
+                { 关于ToolStripMenuItem.Visible = true; }
+
+            }
+            catch
+            {
+                
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel6.Text = "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+            try
+            {
+                string jsonText = HttpGet("http://www.onsigma.com/numsieve.php");
+                JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
+                string s_version = json1["version"].ToString();
+                string s_date = json1["date"].ToString();
+                string s_notice = json1["notice"].ToString();
+                string s_ad = json1["ad"].ToString();
+                adplay = int.Parse(json1["isplay"].ToString());
+
+                checkversion(s_version, s_date, true);
+                toolStripStatusLabel7.Text = s_notice;
+
+                if (adplay == 1)
+                { 关于ToolStripMenuItem.Visible = true; }
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void VersionChecktimer_Tick(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string jsonText = HttpGet("http://www.onsigma.com/numsieve.php");
+                JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
+                string s_version = json1["version"].ToString();
+                string s_date = json1["date"].ToString();
+                string s_notice = json1["notice"].ToString();
+                string s_ad = json1["ad"].ToString();
+                adplay = int.Parse(json1["isplay"].ToString());
+
+                checkversion(s_version, s_date, false);
+                toolStripStatusLabel7.Text = s_notice;
+
+                if (adplay == 1)
+                { 关于ToolStripMenuItem.Visible = true; }
+
+            }
+            catch
+            {
+
+            }
+
         }
     }
 }

@@ -36,3 +36,5 @@ C:\Users\JoJo\Desktop\numsieve\obj\x86\Debug\Numsieve.Form1.resources
 C:\Users\JoJo\Desktop\numsieve\obj\x86\Debug\Numsieve.Properties.Resources.resources
 C:\Users\JoJo\Desktop\numsieve\obj\x86\Debug\Numsieve.spec.resources
 C:\Users\JoJo\Desktop\numsieve\obj\x86\Debug\Numsieve.csproj.GenerateResource.Cache
+C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.csprojResolveAssemblyReference.cache
+C:\Users\mcc\Desktop\numsieve\obj\x86\Debug\Numsieve.download.resources

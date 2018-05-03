@@ -132,6 +132,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Data\DownLoadManager.cs" />
+    <Compile Include="Child\download.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Child\download.Designer.cs">
+      <DependentUpon>download.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Child\CaptureListFrm.resx">
       <DependentUpon>CaptureListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Child\download.resx">
+      <DependentUpon>download.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
