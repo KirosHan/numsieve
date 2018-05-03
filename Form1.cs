@@ -18,10 +18,10 @@ namespace Numsieve
 {
     public partial class Form1 : Form
     {
-       // private ChromeHelper chrome = null;    
-        private CaptureListFrm captureFrm = null;
+   
+
         private int adplay = 0;//全局播放控制
-        //private DownLoadFrm downFrm = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -355,29 +355,12 @@ namespace Numsieve
 
         }
 
-        private void 地址获取器ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-            if (captureFrm == null)
-            {
-                captureFrm = new CaptureListFrm();
-                captureFrm.Show();
-            }
-            else
-            {
-                captureFrm.Show();
-            }
 
-
-        }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             isrun = false;
-            if (captureFrm != null)
-            {
-                captureFrm.Close1();
-            }
+
         }
 
         private void 开始ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -423,18 +406,7 @@ namespace Numsieve
             specfrm.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (captureFrm == null)
-            {
-                captureFrm = new CaptureListFrm();
-                captureFrm.Show();
-            }
-            else
-            {
-                captureFrm.Show();
-            }
-        }
+ 
 
         private void 地址获取器20ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -462,10 +434,13 @@ namespace Numsieve
                     if (isshow == true)
                     {
                         download downloadfrm = new download(s_version, s_date);
-                        downloadfrm.Show();
+                        downloadfrm.ShowDialog();
                        // MessageBox.Show("有新版本!" + s_version);
                     }
-                }
+                    break;
+                }else if(int.Parse(arr_now_version[i]) > int.Parse(arr_s_version[i]))
+                { break; }
+                
             }
 
         }
@@ -483,8 +458,8 @@ namespace Numsieve
 
                 checkversion(s_version,s_date,true);
                 toolStripStatusLabel7.Text = s_notice;
-
-                if(adplay == 1)
+                toolStripStatusLabel1.Text = "Release Date:" + s_date;
+                if (adplay == 1)
                 { 关于ToolStripMenuItem.Visible = true; }
 
             }
@@ -512,7 +487,7 @@ namespace Numsieve
 
                 checkversion(s_version, s_date, true);
                 toolStripStatusLabel7.Text = s_notice;
-
+                toolStripStatusLabel1.Text = "Release Date:" + s_date;
                 if (adplay == 1)
                 { 关于ToolStripMenuItem.Visible = true; }
 
@@ -538,7 +513,7 @@ namespace Numsieve
 
                 checkversion(s_version, s_date, false);
                 toolStripStatusLabel7.Text = s_notice;
-
+                toolStripStatusLabel1.Text = "Release Date:" + s_date;
                 if (adplay == 1)
                 { 关于ToolStripMenuItem.Visible = true; }
 

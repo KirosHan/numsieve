@@ -69,7 +69,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.地址获取器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.地址获取器20ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.防封代理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,11 +76,11 @@
             this.停止ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.Checktimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -161,6 +160,7 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel6,
+            this.toolStripStatusLabel1,
             this.toolStripStatusLabel7});
             this.statusStrip1.Location = new System.Drawing.Point(0, 523);
             this.statusStrip1.Name = "statusStrip1";
@@ -452,7 +452,6 @@
             // 功能ToolStripMenuItem
             // 
             this.功能ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.地址获取器ToolStripMenuItem,
             this.地址获取器20ToolStripMenuItem,
             this.防封代理ToolStripMenuItem});
             this.功能ToolStripMenuItem.Name = "功能ToolStripMenuItem";
@@ -460,24 +459,17 @@
             this.功能ToolStripMenuItem.Text = "功能";
             this.功能ToolStripMenuItem.Click += new System.EventHandler(this.功能ToolStripMenuItem_Click);
             // 
-            // 地址获取器ToolStripMenuItem
-            // 
-            this.地址获取器ToolStripMenuItem.Name = "地址获取器ToolStripMenuItem";
-            this.地址获取器ToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.地址获取器ToolStripMenuItem.Text = "地址获取器 1.0";
-            this.地址获取器ToolStripMenuItem.Click += new System.EventHandler(this.地址获取器ToolStripMenuItem_Click);
-            // 
             // 地址获取器20ToolStripMenuItem
             // 
             this.地址获取器20ToolStripMenuItem.Name = "地址获取器20ToolStripMenuItem";
-            this.地址获取器20ToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.地址获取器20ToolStripMenuItem.Text = "地址获取器 2.0 (测试中)";
+            this.地址获取器20ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.地址获取器20ToolStripMenuItem.Text = "地址获取器 2.0";
             this.地址获取器20ToolStripMenuItem.Click += new System.EventHandler(this.地址获取器20ToolStripMenuItem_Click);
             // 
             // 防封代理ToolStripMenuItem
             // 
             this.防封代理ToolStripMenuItem.Name = "防封代理ToolStripMenuItem";
-            this.防封代理ToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.防封代理ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.防封代理ToolStripMenuItem.Text = "防封代理";
             this.防封代理ToolStripMenuItem.Click += new System.EventHandler(this.防封代理ToolStripMenuItem_Click);
             // 
@@ -519,23 +511,13 @@
             this.关于ToolStripMenuItem.Visible = false;
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(321, 70);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(99, 21);
-            this.button5.TabIndex = 45;
-            this.button5.Text = "地址获取器1.0";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(436, 70);
+            this.button6.Location = new System.Drawing.Point(472, 70);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(146, 21);
+            this.button6.Size = new System.Drawing.Size(110, 21);
             this.button6.TabIndex = 46;
-            this.button6.Text = "地址获取器 2.0(测试中)";
+            this.button6.Text = "地址获取器 2.0";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -556,6 +538,11 @@
             this.Checktimer.Interval = 600000;
             this.Checktimer.Tick += new System.EventHandler(this.VersionChecktimer_Tick);
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -563,7 +550,6 @@
             this.ClientSize = new System.Drawing.Size(713, 545);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -659,7 +645,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 功能ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 地址获取器ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 控制ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 开始ToolStripMenuItem;
@@ -667,13 +652,13 @@
         private System.Windows.Forms.ToolStripMenuItem 防封代理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ToolStripMenuItem 说明ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 地址获取器20ToolStripMenuItem;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Timer Checktimer;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
