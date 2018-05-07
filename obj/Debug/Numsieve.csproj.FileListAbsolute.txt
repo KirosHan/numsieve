@@ -12,3 +12,5 @@ C:\Users\mcc\Desktop\numsieve\bin\Debug\Numsieve.exe
 C:\Users\mcc\Desktop\numsieve\bin\Debug\Numsieve.pdb
 C:\Users\mcc\Desktop\numsieve\obj\Debug\Numsieve.exe
 C:\Users\mcc\Desktop\numsieve\obj\Debug\Numsieve.pdb
+C:\Users\mcc\Desktop\numsieve\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mcc\Desktop\numsieve\bin\Debug\Newtonsoft.Json.xml

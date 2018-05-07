@@ -121,18 +121,19 @@ namespace Numsieve
             }
             else if (data.StartsWith("HTTP/"))
             {
-                /*
+                
                 HttpSniffer.HttpPacket sn = new HttpSniffer.HttpPacket();
                 sn.ParseRequest(data);
                 this.AddList(sn.URL, "HTTP", sn.Cookie);
                 this.SetText("请求:" + sn.Host + ",url:" + sn.URL + "cookie:" + sn.Cookie);
-                */
+                
             }
             else
             {
-                //HttpSniffer.HttpPacket sn = new HttpSniffer.HttpPacket();
-                //sn.ParseRequest(data);
-                //this.SetText("请求:" + sn.Host + ",url:" + sn.URL );
+                HttpSniffer.HttpPacket sn = new HttpSniffer.HttpPacket();
+                sn.ParseRequest(data);
+                this.AddList(sn.ToString(), "其他", "...");
+                this.SetText("请求:" + sn.Host + ",url:" + sn.URL );
             }
         }
 
