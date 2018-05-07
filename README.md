@@ -46,7 +46,7 @@
 ### 使用方法
 * Step1.进入URL获取器，勾选自动发现URL并点击开始，在浏览器中前往选号界面，程序会自动发现可用URL并复制
 * Step2.回到程序主界面，将复制的URL填入对应输入框，点击开始即可开始扫号
-![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/numsieve.gif)
+![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/numsieve_180507.gif)
 
 ### 打赏
 支付宝![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/ali.jpg)
