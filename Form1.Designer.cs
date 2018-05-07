@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.AAAAAAbox = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -69,6 +70,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.地址获取器30ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.地址获取器20ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.防封代理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,7 +82,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.Checktimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button5 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -146,7 +148,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(598, 70);
+            this.button1.Location = new System.Drawing.Point(598, 68);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 21);
@@ -174,6 +176,11 @@
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
             this.toolStripStatusLabel6.Size = new System.Drawing.Size(52, 17);
             this.toolStripStatusLabel6.Text = "Version";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
             // toolStripStatusLabel7
             // 
@@ -452,12 +459,20 @@
             // 功能ToolStripMenuItem
             // 
             this.功能ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.地址获取器30ToolStripMenuItem,
             this.地址获取器20ToolStripMenuItem,
             this.防封代理ToolStripMenuItem});
             this.功能ToolStripMenuItem.Name = "功能ToolStripMenuItem";
             this.功能ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.功能ToolStripMenuItem.Text = "功能";
             this.功能ToolStripMenuItem.Click += new System.EventHandler(this.功能ToolStripMenuItem_Click);
+            // 
+            // 地址获取器30ToolStripMenuItem
+            // 
+            this.地址获取器30ToolStripMenuItem.Name = "地址获取器30ToolStripMenuItem";
+            this.地址获取器30ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.地址获取器30ToolStripMenuItem.Text = "地址获取器 3.0";
+            this.地址获取器30ToolStripMenuItem.Click += new System.EventHandler(this.地址获取器30ToolStripMenuItem_Click);
             // 
             // 地址获取器20ToolStripMenuItem
             // 
@@ -513,7 +528,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(472, 70);
+            this.button6.Location = new System.Drawing.Point(310, 68);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(110, 21);
             this.button6.TabIndex = 46;
@@ -538,10 +553,15 @@
             this.Checktimer.Interval = 600000;
             this.Checktimer.Tick += new System.EventHandler(this.VersionChecktimer_Tick);
             // 
-            // toolStripStatusLabel1
+            // button5
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            this.button5.Location = new System.Drawing.Point(439, 68);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(143, 21);
+            this.button5.TabIndex = 46;
+            this.button5.Text = "地址获取器 3.0(推荐)";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
@@ -549,6 +569,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 545);
             this.Controls.Add(this.button7);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label8);
@@ -659,6 +680,8 @@
         private System.Windows.Forms.Timer Checktimer;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem 地址获取器30ToolStripMenuItem;
+        private System.Windows.Forms.Button button5;
     }
 }
 

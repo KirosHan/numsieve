@@ -418,6 +418,7 @@ namespace Numsieve
         {
             Capture cap = new Capture();
             cap.ShowDialog();
+
         }
 
 
@@ -523,6 +524,18 @@ namespace Numsieve
 
             }
 
+        }
+
+        private void 地址获取器30ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            capture3 cap3 = new capture3();
+            cap3.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            capture3 cap3 = new capture3();
+            cap3.ShowDialog();
         }
     }
 }
