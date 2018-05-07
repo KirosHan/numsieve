@@ -20,3 +20,5 @@ C:\Users\mcc\Desktop\numsieve\bin\Debug\FiddlerCore4.dll
 C:\Users\mcc\Desktop\numsieve\bin\Debug\FiddlerCore4.xml
 C:\Users\mcc\Desktop\numsieve\bin\Debug\Westwind.Utilities.dll
 C:\Users\mcc\Desktop\numsieve\bin\Debug\Westwind.Utilities.xml
+C:\Users\mcc\Desktop\numsieve\bin\Debug\makecert.exe
+C:\Users\mcc\Desktop\numsieve\obj\Debug\Numsieve.csprojResolveAssemblyReference.cache

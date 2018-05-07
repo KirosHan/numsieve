@@ -213,12 +213,26 @@ namespace Numsieve
                     MessageBox.Show("端口号必须在区间 0-65536 内");
                     textBox1.Text = "8888";
                 }
-                else
+                else 
                 {
+                    
+                    if (!CertMaker.rootCertExists())
+                    {
+                        try
+                        {
+                            CertMaker.createRootCert();
+                            CertMaker.trustRootCert();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("证书无法被创建，可能无法正常抓包，尝试清理证书，如还是出现此问题请联系作者。");
+                        }
+                    }
+                   
                     listenport = int.Parse(textBox1.Text.Trim());
                     Start();
                     UpdateButtonStatus();
-
+                    System.Diagnostics.Process.Start("http://www.10010.com");
                 }
             }
             else
@@ -253,6 +267,23 @@ namespace Numsieve
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (CertMaker.rootCertExists())
+            {
+                try { CertMaker.removeFiddlerGeneratedCerts(true); }
+                catch { MessageBox.Show("清理失败，请联系作者。"); }
+                
+
+                
+            }
         }
     }
 }
