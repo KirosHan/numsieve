@@ -54,7 +54,7 @@
 
 ### 反馈
 
-[![alt text](http://pub.idqqimg.com/wpa/images/group.png"title")](https://jq.qq.com/?_wv=1027&k=54wd1Xs) QQ群 18677698 点击链接加入群聊【ONBETA技术交流群】：[https://jq.qq.com/?_wv=1027&k=54wd1Xs](https://jq.qq.com/?_wv=1027&k=54wd1Xs)
+QQ群 18677698 点击链接加入群聊【Numsieve交流群】：[https://jq.qq.com/?_wv=1027&k=54wd1Xs](https://jq.qq.com/?_wv=1027&k=54wd1Xs)
 
 # License
 MIT license. See [LICENSE](https://github.com/KirosHan/numsieve/blob/master/LICENSE)  for details.
