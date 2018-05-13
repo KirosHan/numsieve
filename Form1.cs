@@ -18,9 +18,10 @@ namespace Numsieve
 {
     public partial class Form1 : Form
     {
-       // private ChromeHelper chrome = null;    
-        private CaptureListFrm captureFrm = null;
-        //private DownLoadFrm downFrm = null;
+   
+
+        private int adplay = 0;//全局播放控制
+
         public Form1()
         {
             InitializeComponent();
@@ -354,29 +355,12 @@ namespace Numsieve
 
         }
 
-        private void 地址获取器ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-            if (captureFrm == null)
-            {
-                captureFrm = new CaptureListFrm();
-                captureFrm.Show();
-            }
-            else
-            {
-                captureFrm.Show();
-            }
 
-
-        }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             isrun = false;
-            if (captureFrm != null)
-            {
-                captureFrm.Close1();
-            }
+
         }
 
         private void 开始ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -422,18 +406,7 @@ namespace Numsieve
             specfrm.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (captureFrm == null)
-            {
-                captureFrm = new CaptureListFrm();
-                captureFrm.Show();
-            }
-            else
-            {
-                captureFrm.Show();
-            }
-        }
+ 
 
         private void 地址获取器20ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -445,16 +418,124 @@ namespace Numsieve
         {
             Capture cap = new Capture();
             cap.ShowDialog();
+
         }
 
+
+        private void checkversion(string s_version,string s_date,bool isshow)  //根据版本号查找更新
+        {
+            String[] arr_s_version = s_version.Split('.');
+            String[] arr_now_version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString().Split('.');
+            
+            for (int i =0;i<=2;i++)
+            {
+                if (int.Parse(arr_now_version[i]) < int.Parse(arr_s_version[i]))
+                {
+                    toolStripStatusLabel6.Text = "新版本已发布: v" + s_version;
+                    if (isshow == true)
+                    {
+                        download downloadfrm = new download(s_version, s_date);
+                        downloadfrm.ShowDialog();
+                       // MessageBox.Show("有新版本!" + s_version);
+                    }
+                    break;
+                }else if(int.Parse(arr_now_version[i]) > int.Parse(arr_s_version[i]))
+                { break; }
+                
+            }
+
+        }
         private void button7_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(HttpGet("https://github.com/KirosHan/numsieve/blob/master/json.txt"));
+            try
+            {
+                string jsonText = HttpGet("http://www.onsigma.com/numsieve.php");
+                JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
+                string s_version = json1["version"].ToString();
+                string s_date = json1["date"].ToString();
+                string s_notice = json1["notice"].ToString();
+                string s_ad = json1["ad"].ToString();
+                adplay = int.Parse(json1["isplay"].ToString());
+
+                checkversion(s_version,s_date,true);
+                toolStripStatusLabel7.Text = s_notice;
+                toolStripStatusLabel1.Text = "Release Date:" + s_date;
+                if (adplay == 1)
+                { 关于ToolStripMenuItem.Visible = true; }
+
+            }
+            catch
+            {
+                
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel6.Text = "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+            try
+            {
+                string jsonText = HttpGet("http://www.onsigma.com/numsieve.php");
+                JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
+                string s_version = json1["version"].ToString();
+                string s_date = json1["date"].ToString();
+                string s_notice = json1["notice"].ToString();
+                string s_ad = json1["ad"].ToString();
+                adplay = int.Parse(json1["isplay"].ToString());
+
+                checkversion(s_version, s_date, true);
+                toolStripStatusLabel7.Text = s_notice;
+                toolStripStatusLabel1.Text = "Release Date:" + s_date;
+                if (adplay == 1)
+                { 关于ToolStripMenuItem.Visible = true; }
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void VersionChecktimer_Tick(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string jsonText = HttpGet("http://www.onsigma.com/numsieve.php");
+                JObject json1 = (JObject)JsonConvert.DeserializeObject(jsonText);
+                string s_version = json1["version"].ToString();
+                string s_date = json1["date"].ToString();
+                string s_notice = json1["notice"].ToString();
+                string s_ad = json1["ad"].ToString();
+                adplay = int.Parse(json1["isplay"].ToString());
+
+                checkversion(s_version, s_date, false);
+                toolStripStatusLabel7.Text = s_notice;
+                toolStripStatusLabel1.Text = "Release Date:" + s_date;
+                if (adplay == 1)
+                { 关于ToolStripMenuItem.Visible = true; }
+
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        private void 地址获取器30ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            capture3 cap3 = new capture3();
+            cap3.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            capture3 cap3 = new capture3();
+            cap3.ShowDialog();
         }
     }
 }
