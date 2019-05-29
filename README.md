@@ -20,10 +20,10 @@
 ### 近期目标：
 
 * ~~添加号码分类~~
-* 添加重复过滤
+* 添加重复过滤(该功能已在收费版中加入)
 * ~~添加拉取间隔控制功能以避免被封~~
 * ~~添加json获取工具~~
-* 添加防封代理
+* 添加防封代理(该功能已砍，免费的代理大部分是蜜罐，为了保护大家的信息安全所以不会加入这个功能了)
 
 ### 界面
 
@@ -48,7 +48,8 @@
 * Step2.回到程序主界面，将复制的URL填入对应输入框，点击开始即可开始扫号
 ![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/numsieve_180507.gif)
 
-### 打赏
+### 请我喝杯饮料
+开源不易，所有核心算法都已在本仓库中完成，感谢大家支持
 支付宝![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/ali.jpg)
 微信![pic](https://github.com/KirosHan/numsieve/blob/master/web_resource/wechat.jpg)
 
